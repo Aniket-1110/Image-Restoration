@@ -246,7 +246,7 @@ if __name__ == "__main__":
         if args.debug:
             print("Failed to save before_vs_after:", e)
 
-    print("\n✅ Saved restored image →", args.output)
+    print("\n Saved restored image →", args.output)
     if args.show:
         show_bgr(img, "Original")
         if damage_mask is not None and damage_mask.any():
@@ -254,4 +254,5 @@ if __name__ == "__main__":
             overlay = cv2.addWeighted(img, 0.7, mask_bgr, 0.3, 0)
             show_bgr(overlay, "Detected damage (mask overlay)")
         show_bgr(restored, "Auto Restored")
+
 
